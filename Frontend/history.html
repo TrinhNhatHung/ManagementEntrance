@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Management</title>
+
+    <link rel="stylesheet" href="vendor/css/jquery-ui.css">
+
+    <link rel="stylesheet" href="vendor/css/wickedpicker.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <script src="config/config.js"></script>
+
+    <script src="resource/js/authorize.js"></script>
+
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="resource/css/history.css">
+
+    <script type="text/babel" src="resource/js/PagingReact.js"></script>
+    <script type="text/babel" src="resource/js/paging.js"></script>
+    <script src="resource/js/HistoryReact.js" type="text/babel"></script>
+    <script type="text/babel" src="resource/js/history.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css" integrity="sha512-WEQNv9d3+sqyHjrqUZobDhFARZDko2wpWdfcpv44lsypsSuMO0kHGd3MQ8rrsBn/Qa39VojphdU6CMkpJUmDVw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js" integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <iframe src="sidebar.html?page=history" class="sidebar-container" width="16%" height="100%"></iframe>
+    <div class="tmp"></div>
+    <div class="main-container">
+        <div class="search">
+            <div class="search-component date-component">
+                <p class="label">Date:</p>
+                <span class="wrap-date-from">
+                    <label for="">From:</label>
+                    <input class="date-from date-picker" name="date-from" type="text">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                </span>
+
+                <span class="wrap-date-to">
+                    <label for="">To:</label>
+                    <input class="date-to date-picker" name="date-to" type="text">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                </span>
+            </div>
+
+            <div class="search-component time-component">
+                <p class="label">Time:</p>
+                <span class="wrap-time-from">
+                    <label for="">From:</label>
+                    <input type="text" id="timepicker-24-hr" name="timepicker-24-hr" class="timepicker-24-hr time-from">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                </span>
+
+                <span class="wrap-time-to">
+                    <label for="">To:</label>
+                    <input type="text" id="timepicker-24-hr" name="timepicker-24-hr" class="timepicker-24-hr time-to">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                </span>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="search-component plate-component">
+                <p class="label1">License plate:</p>
+                <span class="wrap-numberplate">
+                    <input class="number-plate" name="number-plate" type="text">
+                    <i class="fa fa-close" aria-hidden="true"></i>
+                </span>
+                <span class="wrap-is-out">
+                    <input class="in" name="is-out" checked type="radio" value="fasle">
+                    <label for="">In</label>
+                    <input class="out" name="is-out" type="radio" value="true">
+                    <label for="">Out</label>
+                </span>
+            </div>
+            <br>
+            <div class="clearfix"></div>
+            <div class="search-component">
+                <button type="button" class="btn btn-primary search-btn"><i class="fa fa-search" aria-hidden="true"></i>Search</button>
+            </div>
+        </div>
+        <div class="history-area">
+            <span>
+                <label for="">Show</label>
+                <select class="amount-history row-per-page">
+                    <option value="10">10</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                    <option value="150">150</option>
+                    <option value="200">200</option>
+                </select>
+                <label for="">histories</label>
+            </span>
+            <div id="history-table" class="history-table"></div>
+            <div class="clearfix"></div>
+            <div id="paging-area" class="paging-area">
+
+            </div>
+        </div>
+    </div>
+    <script src="vendor/js/wickedpicker.min.js"></script>
+</body>
+
+</html>

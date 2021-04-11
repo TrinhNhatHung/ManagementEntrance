@@ -1,0 +1,103 @@
+.main-container .header {
+    width: 100%;
+    height: 55px;
+    margin-top: 15px;
+    background-color: #f5f5f5;
+    border-bottom: solid 3px #005ec2;
+    color: #65676B;
+}
+
+.main-container .header p {
+    display: inline-block;
+    font-size: 1.3em;
+}
+
+.main-container .header span {
+    position: relative;
+    left: 15px;
+    top: 20%;
+    transform: translate(0, -50%);
+}
+
+.main-container .header span i {
+    margin-right: 5px;
+}
+
+.person-area {
+    padding-top: 2vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 1vh;
+    background-color: white;
+}
+
+.person-area span {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.person-area select.amount-person {
+    border: 1px solid #dee2e6;
+    outline: none;
+    height: 30px;
+    width: 60px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.person-table thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.person-table table tbody .edit-action-btn {
+    border: none;
+    background-color: rgb(67, 179, 142);
+    color: white;
+    border-radius: 20px;
+    padding: 4px 12px;
+    outline: none;
+    cursor: pointer;
+}
+
+.person-table table tbody .edit-action-btn:hover {
+    background-color: rgb(57, 138, 111);
+}
+
+.update-form {
+    width: 350px;
+    height: 70%;
+    border-radius: 5px;
+    background-color: white;
+    display: inline-block;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+}
+
+.update-form p {
+    margin-left: 10%;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: rgb(83, 83, 83);
+}
+
+.update-form .main-form {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.update-form .main-form .form-item {
+    width: calc(80%);
+    margin-top: 15px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.update-form .main-form .form-item input {
+    width: 100%;
+}

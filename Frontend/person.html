@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Management</title>
+
+    <link rel="stylesheet" href="vendor/css/notify.css">
+    <script src="vendor/js/notify.js"></script>
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="config/config.js"></script>
+
+    <script src="resource/js/authorize.js"></script>
+
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <link rel="stylesheet" href="resource/css/style.css">
+    <link rel="stylesheet" href="resource/css/person.css">
+
+    <script type="text/babel" src="resource/js/PagingReact.js"></script>
+    <script type="text/babel" src="resource/js/paging.js"></script>
+    <script src="resource/js/PersonReact.js" type="text/babel"></script>
+    <script type="text/babel" src="resource/js/person.js"></script>
+</head>
+
+<body>
+    <iframe src="sidebar.html?page=person" frameborder="0" class="sidebar-container" width="16%" height="100%"></iframe>
+    <div class="tmp"></div>
+    <div class="main-container">
+        <div class="header">
+            <span>
+            <i class="fa fa-navicon" aria-hidden="true"></i>
+            <p>Person</p>
+        </span>
+        </div>
+
+        <div class="tasks">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#person-list">
+                        <i class="fa fa-navicon" aria-hidden="true"></i> Person list
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#add-person">
+                        <i class="fa fa-plus" aria-hidden="true"></i> Add person
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content">
+                <div id="person-list" class="list-tab container tab-pane active"><br>
+                    <div class="person-area">
+                        <span class="show">
+                            <label for="">Show</label>
+                            <select class="amount-person row-per-page">
+                                <option value="10">10</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                                <option value="200">200</option>
+                            </select>
+                            <label for="">persons</label>
+                        </span>
+                        <span class="search">
+                            <label for="">Search:</label>
+                            <input type="text" placeholder="by ID number ...">
+                        </span>
+                        <div id="person-table" class="person-table"></div>
+                        <div class="clearfix"></div>
+                        <div id="paging-area" class="paging-area">
+
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+                <div id="add-person" class="add-tab container tab-pane fade"><br>
+                    <p class="title">Personal information</p>
+                    <div class="form">
+                        <div class="form-item">
+                            <span>
+                                <label for="">Name:</label>
+                            </span>
+                            <input name="name" type="text" required>
+                        </div>
+
+                        <div class="form-item">
+                            <span>
+                                <label for="">ID number:</label>
+                            </span>
+                            <input name="id-number" type="text" required>
+                        </div>
+                        <div class="form-item">
+                            <span>
+                                <label for="">Gender:</label>
+                            </span>
+                            <select name="gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="form-item">
+                            <span>
+                                <label for="">Phone number:</label>
+                            </span>
+                            <input name="phone-number" type="text" required>
+                        </div>
+                        <div class="form-item">
+                            <span>
+                                <label for="">Email:</label>
+                            </span>
+                            <input name="email" type="text" required>
+                        </div>
+                    </div>
+                    <div class="btn">
+                        <p class="error">asasas</p>
+                        <button class="cancel-btn">Cancel</button>
+                        <button class="submit-btn">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="popup">
+        <div class="update-form">
+            <p>Update</p>
+            <div class="main-form">
+                <div class="form-item">
+                    <label for="">ID number</label>
+                    <br>
+                    <input name="id" type="text" readonly>
+                </div>
+                <div class="form-item">
+                    <label for="">Fullname</label>
+                    <br>
+                    <input name="name" type="text">
+                </div>
+                <div class="form-item">
+                    <label for="">Gender</label>
+                    <br>
+                    <input name="gender" type="text">
+                </div>
+                <div class="form-item">
+                    <label for="">Email</label>
+                    <br>
+                    <input name="email" type="text">
+                </div>
+                <div class="form-item">
+                    <label for="">Phone</label>
+                    <br>
+                    <input name="phone-number" type="text">
+                </div>
+                <div class="form-item">
+                    <button class="cancel-btn">Cancel</button>
+                    <button class="update-btn">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

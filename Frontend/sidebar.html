@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Garage Management</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css'>
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="resource/css/sidebar.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="side-bar">
+            <img class="logo" src="resource/img/logo.JPG" alt="">
+            <div class="info-admin">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <img src="resource/img/avatar.png" alt="" class="avatar">
+                    </div>
+                    <div class="col-sm-7">
+                        <div class="info">
+                            <p>Welcome</p>
+                            <p id="fullname">Admin</p>
+                        </div>
+                        <i class="fa fa-chevron-down expand-button expand-toggled" aria-hidden="true"></i>
+                    </div>
+                    <div class="log-out none">
+                        <p>Log out</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="tasks">
+                <ul class="list-group">
+                    <li class="list-group-item history-item">
+                        <a href="history.html" target="_top">
+                            <span>
+                                <i class="fa fa-book" aria-hidden="true"></i>
+                            </span> History
+                        </a>
+                    </li>
+                    <li class="list-group-item person-item">
+                        <a href="person.html" target="_top">
+                            <span>
+                                <i class="fa fa-user" aria-hidden="true"></i>
+                            </span> Person
+                        </a>
+                    </li>
+                    <li class="list-group-item vehicle-item">
+                        <a href="vehicle.html" target="_top">
+                            <span>
+                                <i class="fa fa-car" aria-hidden="true"></i>
+                            </span> Vehicles
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var queryString = location.search;
+        queryString = queryString.substring(1, queryString.length);
+        var paramArray = queryString.split('&');
+        var urlParameter = {};
+        paramArray.forEach((element) => {
+            let param = element.split('=');
+            urlParameter[param[0]] = param[1];
+        });
+
+        if (urlParameter['page'] == 'vehicle') {
+            $('.vehicle-item').addClass('active');
+        }
+
+        if (urlParameter['page'] == 'person') {
+            $('.person-item').addClass('active');
+        }
+        if (urlParameter['page'] == 'history') {
+            $('.history-item').addClass('active');
+        }
+
+        if (localStorage.getItem('fullname') != undefined) {
+            $('.info p#fullname').html(localStorage.getItem('fullname'));
+        }
+
+        $('.expand-button').click((event) => {
+            $('.side-bar .info-admin .row').toggleClass('expanded');
+            $('.log-out').toggleClass('none');
+        });
+
+        $('.log-out').click(() => {
+            localStorage.removeItem("token-authorization");
+            localStorage.removeItem("fullname");
+            window.open('login.html', '_top');
+        });
+    </script>
+
+</body>
+
+</html>

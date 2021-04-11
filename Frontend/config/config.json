@@ -1,0 +1,31 @@
+{
+    "api": {
+        "domain": "http://localhost:8081/garage-management",
+        "person_api": {
+            "read": "/person/all",
+            "insert": "/person/register",
+            "delete": "/person/delete",
+            "update": "/person/update"
+        },
+        "vehicle_api": {
+            "read": "/vehicle/all",
+            "insert": "/vehicle/register",
+            "delete": "/vehicle/delete",
+            "update": "/vehicle/update",
+            "check": "/vehicle/check-invalid"
+        },
+        "history_api": {
+            "read": "/history/all",
+            "insert": "/history/add",
+            "delete": "",
+            "update": ""
+        },
+        "image": {
+            "history": "/history-image"
+        },
+        "authenticate": {
+            "authorize": "/authorize",
+            "login": "/login"
+        }
+    }
+}

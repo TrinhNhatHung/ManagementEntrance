@@ -1,0 +1,139 @@
+input[type='text'] {
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    height: 30px;
+    outline: none;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.main-container .search {
+    width: 100%;
+    background-color: #e6eaea;
+    padding: 1% 1%;
+}
+
+.main-container .search .search-btn i {
+    margin-right: 6px;
+    font-size: 0.9em;
+}
+
+.main-container .search-component {
+    margin-top: 15px;
+}
+
+.main-container .date-component,
+.main-container .time-component,
+.main-container .plate-component {
+    width: 50%;
+    float: left;
+}
+
+.main-container .date-component input,
+.main-container .time-component input {
+    width: 35%;
+    margin-left: 15px;
+}
+
+.main-container .search-component p.label {
+    font-weight: bold;
+    color: rgba(49, 49, 49, 0.9);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.main-container .plate-component .label1 {
+    display: inline-block;
+    font-weight: bold;
+    color: rgba(49, 49, 49, 0.9);
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.main-container .plate-component input[type='text'] {
+    margin-left: 3% !important;
+    width: 48% !important;
+}
+
+.main-container .plate-component .wrap-is-out {
+    float: right;
+    margin-right: 11%;
+    margin-top: 1%;
+}
+
+.main-container .history-area {
+    padding-top: 2vh;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 1vh;
+    background-color: white;
+}
+
+.main-container .history-area span {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.main-container .history-area select.amount-history {
+    border: 1px solid #dee2e6;
+    outline: none;
+    height: 30px;
+    width: 60px;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.main-container .history-table thead {
+    background-color: #2c3e50;
+    color: white;
+}
+
+.wickedpicker__title {
+    font-weight: bold;
+}
+
+.wickedpicker__close {
+    font-weight: bold;
+}
+
+.wickedpicker__controls__control-up::before {
+    content: none;
+}
+
+.wickedpicker__controls__control-down::after {
+    content: none;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+    font-size: 0.7em;
+}
+
+.wrap-numberplate {
+    position: relative;
+}
+
+.wrap-date-from,
+.wrap-date-to {
+    position: relative;
+}
+
+.wrap-time-from,
+.wrap-time-to {
+    position: relative;
+}
+
+.wrap-time-from i,
+.wrap-time-to i,
+.wrap-date-from i,
+.wrap-date-to i,
+.wrap-numberplate i {
+    color: rgb(82, 82, 82);
+    font-size: 0.9em;
+    position: relative;
+    right: 22px;
+}
